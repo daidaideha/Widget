@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 跑步操作按钮自定义样式 -->
+    <declare-styleable name="RunOperateButton">
+
+        <!-- 外圈与内圈间距 -->
+        <attr name="strokeCircleWidth" format="dimension" />
+        <!-- 文字内容 -->
+        <attr name="operateText" format="string" />
+        <!-- 文字大小 -->
+        <attr name="operateTextSize" format="dimension" />
+        <!-- 文字颜色 -->
+        <attr name="operateTextColor" format="color" />
+        <!-- 圈背景颜色 -->
+        <attr name="operateBackgroundColor" format="color" />
+        <!-- 中间圆环颜色 -->
+        <attr name="operateStrokeColor" format="color" />
+        <!-- 空进度圆环颜色 -->
+        <attr name="operateEmptyColor" format="color" />
+        <!-- 最大进度 -->
+        <attr name="operateMaxProgress" format="integer" />
+        <!-- 点击放大偏移量 -->
+        <attr name="offset" format="dimension" />
+        <!-- 样式 progress 进度条模式，none 正常模式 -->
+        <attr name="operateStyle">
+            <flag name="progress" value="0" />
+            <flag name="none" value="1" />
+            <flag name="progressStroke" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>
