@@ -68,7 +68,7 @@ class RunOperateButton(context: Context?, attrs: AttributeSet? = null, defStyleA
     private var paintEmpty: Paint? = null
     private var paintText: Paint? = null
     // 点击事件监听
-    private var onClickListener: OnClickListener? = null
+    private var onClickListener: OnOperateClickListener? = null
     // 进度变化监听
     private var onProgressListener: OnProgressListener? = null
 
@@ -91,7 +91,7 @@ class RunOperateButton(context: Context?, attrs: AttributeSet? = null, defStyleA
     }
 
 
-    interface OnClickListener {
+    interface OnOperateClickListener {
         fun onOperateClick(view: View)
     }
 
@@ -227,8 +227,13 @@ class RunOperateButton(context: Context?, attrs: AttributeSet? = null, defStyleA
         this.strokeWidth = strokeWidth
     }
 
-    fun setOperateClickListener(onClickListener: OnClickListener) {
-        this.onClickListener = onClickListener
+    fun setOperateClickListener(onClickListener: ((v: RunOperateButton) -> Unit)) {
+        this.onClickListener = (object : OnOperateClickListener{
+            override fun onOperateClick(view: View) {
+                onClickListener.invoke(view as @kotlin.ParameterName(name = "v") RunOperateButton)
+            }
+
+        })
     }
 
     fun setOperateProgressListener(onProgressListener: OnProgressListener) {

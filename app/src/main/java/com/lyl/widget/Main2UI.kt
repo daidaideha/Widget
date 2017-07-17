@@ -34,12 +34,12 @@ open class Main2UI : AnkoComponent<Main2Activity> {
                     setStrokeWidth(dip(5).toFloat())
                     setMaxCount(60.toFloat())
                     backgroundColor = Color.TRANSPARENT
-                    setOperateClickListener(object : RunOperateButton.OnClickListener {
-
-                        override fun onOperateClick(view: View) {
-                            toast("Hello, ${name.text}!")
-                        }
-                    })
+//                    setOperateClickListener(object : RunOperateButton.OnClickListener {
+//
+//                        override fun onOperateClick(view: View) {
+//                            toast("Hello, ${name.text}!")
+//                        }
+//                    })
                 }.lparams(width = dip(100), height = dip(100))
 
                 OperateButton {

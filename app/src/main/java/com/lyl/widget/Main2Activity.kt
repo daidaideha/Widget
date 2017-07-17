@@ -4,10 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.lyl.widget.libs.RunOperateButton
-import org.jetbrains.anko.dip
-import org.jetbrains.anko.find
-import org.jetbrains.anko.setContentView
-import org.jetbrains.anko.sp
+import org.jetbrains.anko.*
 
 class Main2Activity : AppCompatActivity() {
 
@@ -17,6 +14,7 @@ class Main2Activity : AppCompatActivity() {
 
         val btn = find<RunOperateButton>(Main2UI().ID_BTN_CLICK)
         btn.setOperateText("update")
+        btn.setOperateClickListener { toast("operate click") }
 
         val btn2 = find<RunOperateButton>(Main2UI().ID_BTN_PROGRESS)
         btn2.setOperateText("update2")
